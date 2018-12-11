@@ -17,4 +17,9 @@ class Customer(models.Model):
 	email =models.EmailField(max_length=262)
 	password=models.CharField(max_length=264)
 	profile_picture=models.ImageField(default='static/images/profile.jpg', upload_to='static/images/profile_picture')
-	
+
+class Maillot (models.Model):
+  name=models.CharField(max_length=264)
+  price = models.DecimalField(max_digits=5, decimal_places=2)
+  description = models.TextField()
+  

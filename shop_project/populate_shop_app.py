@@ -5,11 +5,11 @@ django.setup()
 
 import random
 from faker import Faker
-from shop_app.models import Customer, Product
+from shop_app.models import Customer, Product , Maillot
 
 fakegen = Faker()
 def generate_brand():
-	brands["Nike","Dior","Gucci","Balanciage","NEw Balance","Adidas","GOldenGoose","Mcqueen","Prada","Louis Vuitton"]
+	brands=["Nike","Dior","Gucci","Balanciage","NEw Balance","Adidas","GOldenGoose","Mcqueen","Prada","Louis Vuitton"]
 	index=random.randint(0,9)
 	return brands[index]
 
@@ -23,9 +23,22 @@ def generates_products():
 		product= Product.objects.get_or_create(name=generate_brand,description=fakegen.text(),price=random_price)
 		product[0].save()
 
+def generate_name_maillots():
+	maillots=["Le Cap", "Prada","The Kooples","Dior","Nike","Zara","Sundec"]
+	index=random.randint(0,6)
+	return maillots[index]
+
+def generate_maillots(): 
+	for maillot in range (15):
+		price=random.randint(5,1000)
+		maillots=generate_name_maillots()
+		maillots=Maillot.objects.get_or_create(name=generate_name_maillots,price=price,description=fakegen.text())[0]
+			
 def populate():
+  generate_name_maillots()
   generates_clients()
   generates_products()
+  generate_maillots()
 
 if __name__ == '__main__':
   print('starting populate...')
