@@ -9,8 +9,8 @@ class Product(models.Model):
   def __str__(self):
     return self.name
 
-  def __repr__(self):
-    return "<Product {}>".format(self.name)
+ # def __repr__(self):
+    #return "<Product {}>".format(self.name)
 class Customer(models.Model):
 	first_name = models.CharField(max_length=264)
 	last_name = models.CharField(max_length=264)
