@@ -33,6 +33,7 @@ def generate_maillots():
 		price=random.randint(5,1000)
 		maillots=generate_name_maillots()
 		maillots=Maillot.objects.get_or_create(name=generate_name_maillots,price=price,description=fakegen.text())[0]
+
 			
 def populate():
   generate_name_maillots()
