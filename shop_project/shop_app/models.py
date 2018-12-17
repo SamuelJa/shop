@@ -22,4 +22,11 @@ class Maillot (models.Model):
   name=models.CharField(max_length=264)
   price = models.DecimalField(max_digits=5, decimal_places=2)
   description = models.TextField()
-  
+  Product = models.ForeignKey(Product , on_delete=models.CASCADE , default=1)
+
+class Comment(models.Model):
+	username=models.CharField(max_length=264)
+	text=models.CharField(max_length=264)
+	date=models.DateField()
+
+

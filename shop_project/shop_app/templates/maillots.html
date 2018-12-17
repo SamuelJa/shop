@@ -5,14 +5,14 @@
 </head>
 <body>
 	<ul>
-	<li><h1>Liste des maillots</h1>
-		{% for maillot in maillots %}
-			{{maillot.name}}
-			{{maillot.price}}
-			{{maillot.description}}
-			<a href="{% url 'shop_app:maillot' maillot.id %}">More</a>
-		{% endfor %}	
-	</li>
+		<li><h1>Liste des maillots</h1></li>
+			{% for maillot in maillots %}
+				<li>{{maillot.name}}	
+					{{maillot.price}}
+					{{maillot.description}}</li>
+				<a href="{% url 'shop_app:maillot' maillot.id %}">More</a>
+			{% endfor %}	
+		
 	</ul>
 </body>
 </html>
